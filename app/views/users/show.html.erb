@@ -14,7 +14,7 @@
           <%= "e-mail：#{@user.email}" %>
         </div>
         <div class="user-btn">
-          <a href="#" class="uer-edit-btn">編集する</a>
+          <%= link_to "編集する", edit_user_path(@user), class:"uer-edit-btn" %>
         </div>
       </div>
       <h2>研修の記録</h2>
