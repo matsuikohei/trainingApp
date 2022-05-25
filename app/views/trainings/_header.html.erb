@@ -5,10 +5,10 @@
       </div>
       <ul class="d-flex">
         <li class="nav-item"> 
-          <%= link_to "ログイン", url: new_user_session, class:"nav-link active"%> 
+          <%= link_to "ログイン",new_user_session_path, class:"nav-link active"%> 
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">新規登録</a>
+          <%= link_to "新規登録",new_user_registration_path, class:"nav-link active"%> 
         </li>
       </ul>
     </div>

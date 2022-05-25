@@ -13,12 +13,12 @@
   <main class="form-signin">
     <h2>Log in</h2>
     <div class="form-signin">
-      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="form-floating">
-          <%= f.label :employee_number %><br />
-          <%= f.text_field :employee_number, class: "form-control", placeholder: "社員番号"%>
+          <%= f.label :email %><br />
+          <%= f.text_field :email, class: "form-control"%>
         </div>
 
         <div class="form-floating">
