@@ -1,0 +1,29 @@
+.row .user-info{
+  font-size: 20px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+.table-responsive {
+  margin-bottom: 20px;
+}
+
+.col-md-9 {
+  margin: auto;
+}
+
+.uer-edit-btn{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.user-btn{
+  background-color: gray;
+  margin-left: 60px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+body{
+  flex-direction: column;
+}
