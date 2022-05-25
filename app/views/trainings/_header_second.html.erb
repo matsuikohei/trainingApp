@@ -19,7 +19,7 @@
       </div>
       <ul class="d-flex">
         <li class="nav-item"> 
-          <a class="nav-link active" href="#">ログアウト</a>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link active" %>
         </li>
       </ul>
     </div>
