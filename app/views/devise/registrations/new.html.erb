@@ -17,6 +17,11 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="form-floating">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"Email" %>
+        </div>
+
+        <div class="form-floating">
           <%= f.label :employee_number %><br />
           <%= f.text_field :employee_number, class: "form-control", placeholder: "社員番号"%>
         </div>
