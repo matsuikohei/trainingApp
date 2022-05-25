@@ -7,6 +7,9 @@
       </div>
       <ul class="d-flex">
         <li class="nav-item"> 
+          <%= link_to "#{current_user.last_name}#{current_user.first_name}", user_path(current_user.id), class:"nav-link active" %>
+        </li>
+        <li class="nav-item"> 
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link active" %>
         </li>
       </ul>
