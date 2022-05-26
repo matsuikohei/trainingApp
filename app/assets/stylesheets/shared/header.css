@@ -1,0 +1,30 @@
+/* header{
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: black;
+} */
+
+.container-fluid .navbar-brand{
+  font-size: 25px;
+}
+
+.d-flex{
+  margin: 0;
+  list-style: none;
+}
+
+.d-flex .nav-item .nav-link{
+  color: #ffffff;
+  padding: 15px;
+}
+.top-page{
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* position: relative; */
+}
+body {
+  padding-top: 54px;
+  min-height: 75rem;
+}
