@@ -35,3 +35,7 @@ body {
   background: none;
   border: none;
 }
+
+.field_with_errors{
+  display: contents;
+}

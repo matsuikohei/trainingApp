@@ -1,11 +1,13 @@
   <head>
-    <link href="../stylesheets/signup.css" rel="stylesheet">
+    <link href="../stylesheets/users/signup.css" rel="stylesheet">
+    <link href="../stylesheets/shared/error_messages.css" rel="stylesheet">
   </head>
 <body class="text-center">
   <main class="form-signin">
     <h2>ユーザー情報編集</h2>
     <div class="form-signin">
-      <%= form_with model: current_user, local: true do |f| %>
+      <%= form_with model: @user, local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
         <div class="form-floating">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"Email" %>
