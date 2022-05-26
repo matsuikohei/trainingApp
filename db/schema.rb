@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_030456) do
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["employee_number"], name: "index_users_on_employee_number", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
