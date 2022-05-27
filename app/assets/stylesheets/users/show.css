@@ -1,10 +1,17 @@
+.container-fluid .row .col-md-9 h2{
+  font-size: 25px;
+}
+
+
 .row .user-info{
   font-size: 20px;
+  margin-top: 20px;
   margin-bottom: 60px;
   display: flex;
   align-items: center;
 }
 .table-responsive {
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -26,4 +33,18 @@
 
 body{
   flex-direction: column;
+}
+
+.table{
+  width: 100%;
+}
+thead th{
+  font-weight: 800;
+}
+tbody tr:nth-child(odd) {
+  background-color:  #ddd;    /* 背景色指定 */
+}
+
+th,td {
+  padding: 5px 10px;          /* 余白指定 */
 }
