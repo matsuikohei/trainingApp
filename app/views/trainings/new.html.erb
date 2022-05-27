@@ -11,7 +11,7 @@
 
     <div class="form-floating">
       <%= f.label :category_training_id %><br />
-      <%= f.text_field :category_training_id, class: "form-control", placeholder: ""%>
+      <%= f.collection_select(:category_training_id, CategoryTraining.all, :id, :name, {}, {class: "form-control", placeholder: ""}) %>
     </div>
 
     <div class="form-floating">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-floating submit-btn">
-      <%= f.submit "更新" %>
+      <%= f.submit "投稿する" %>
     </div>
   <% end %>
 </div>
