@@ -25,7 +25,7 @@
 | -------------------- | ------- | ----------- |
 | training_date        | date    | null: false |
 | training_category_id | integer | null: false |
-| content              | string  | null: false |
+| content              | text    | null: false |
 
 ## Association
 
