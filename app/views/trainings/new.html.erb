@@ -11,9 +11,11 @@
         <option>研修したスタッフを選択してください</option>
         <% User.where.not(id: current_user.id).each do |user| %>
           <option value=<%= user.id %>><%= "#{user.last_name}#{user.first_name}" %></option>
+          <input name="training[trainee_id]" type="hidden" value=<%= user.id %>>
         <% end %>
       </select>
       <input name="training[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      <input name="training[trainer_id]" type="hidden" value=<%= current_user.id %>>
     </div>
 
     <div class="form-floating">
