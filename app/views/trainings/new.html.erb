@@ -1,0 +1,26 @@
+<div class="training-title">
+研修内容投稿ページ
+</div>
+<div class="form-training">
+  <%= form_with model: @training, local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+    <div class="form-floating">
+      <%= f.label :training_date %><br />
+      <%= f.date_field :training_date, class: "form-control"%>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :category_training_id %><br />
+      <%= f.text_field :category_training_id, class: "form-control", placeholder: ""%>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :content %><br />
+      <%= f.text_area :content, class: "form-control form-content", rows: "10" %>
+    </div>
+
+    <div class="form-floating submit-btn">
+      <%= f.submit "更新" %>
+    </div>
+  <% end %>
+</div>
