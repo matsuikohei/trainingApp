@@ -8,7 +8,6 @@
     <div class="form-floating">
       <label for="training_user">研修対象者</label>
       <select name="training[user_ids][]" class="form-control" id="training_user">
-        <option>研修したスタッフを選択してください</option>
         <% User.where.not(id: current_user.id).each do |user| %>
           <option value=<%= user.id %>><%= "#{user.last_name}#{user.first_name}" %></option>
         <% end %>

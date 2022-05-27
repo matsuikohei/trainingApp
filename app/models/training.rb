@@ -4,4 +4,19 @@ class Training < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category_training
+  with_options presence: true do
+    validates :training_date
+    validates :training_category_id, numericality: { other_than: 1 }
+    validates :content
+    validates :trainer_id
+  end
+  validate :training_date_cannot_be_in_the_future
+
+  def training_date_cannot_be_in_the_future
+    if training_date > Date.today 
+      errors.add(:training_date, "can't be in the future")
+    end
+  end
+
+
 end
