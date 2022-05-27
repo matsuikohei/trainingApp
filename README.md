@@ -13,9 +13,9 @@
 ## Association
 
 - has_many :training_comments
+- has_many :test_comments
 - has_many :training_users
 - has_many :trainings, through: :training_users
-- has_many :test_comments
 - has_many :test_users
 - has_many :tests, through: :test_users
 
@@ -30,6 +30,8 @@
 ## Association
 
 - has_many :training_comments
+- has_many :training_users
+- has_many :users, through: :training_users
 
 ## training_usersテーブル
 
@@ -63,6 +65,10 @@ belongs_to :training
 | test_date        | date    | null: false |
 | test_category_id | integer | null: false |
 | content          | string  | null: false |
+
+- has_many :test_comments
+- has_many :test_users
+- has_many :users, through: :test_users
 
 ## Association
 

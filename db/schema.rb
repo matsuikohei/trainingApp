@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_065954) do
+ActiveRecord::Schema.define(version: 2022_05_27_081325) do
+
+  create_table "training_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "training_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["training_id"], name: "index_training_users_on_training_id"
+    t.index ["user_id"], name: "index_training_users_on_user_id"
+  end
 
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "training_date", null: false
@@ -36,4 +45,6 @@ ActiveRecord::Schema.define(version: 2022_05_27_065954) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "training_users", "trainings"
+  add_foreign_key "training_users", "users"
 end
