@@ -10,7 +10,11 @@ class Training < ApplicationRecord
     validates :content
     validates :trainer_id
   end
-  validate :training_date_cannot_be_in_the_future
+  validate :training_date_cannot_be_in_the_future, if: :training_date_valid?
+
+  def training_date_valid?
+    training_date != nil
+  end
 
   def training_date_cannot_be_in_the_future
     if training_date > Date.today 
