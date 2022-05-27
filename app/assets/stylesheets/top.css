@@ -1,7 +1,73 @@
-main{
-  width: 100%;
+.top-main{
+  width: 100vw;
+  height: 100vh;
+
 }
 
+.top-main .container{
+  height: 30%;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.top-main .container .col-lg-6{
+  height: 100%;
+}
+
+.top-main .container .col-lg-6{
+}
+
+.fw-light{
+  font-size: 30px;
+  text-align: center;
+}
+.album{
+  height: 50%;
+
+}
+.album .container{
+  height: 100%;
+
+}
 .album .container .row{
-  justify-content: space-between;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+}
+
+.album .container .row .col{
+  width: 30vw;
+  padding: 5px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 5px;
+}
+
+
+.album .container .row .col .card{
+  height: 100%;
+}
+
+.album .container .row .col .card-body{
+  height: 100%;
+  background-color: #ffffff;
+  padding-top: 3rem;
+
+}
+
+.card-body .d-flex{
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.card-text{
+  font-size: 20px;
+}
+.btn{
+  height: 2rem;
+  width: 3rem;
+  color: #6c757d;
+  border-color: #6c757d;
 }
