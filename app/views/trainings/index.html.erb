@@ -1,0 +1,31 @@
+<div class="table-responsive-training-index">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">研修日</th>
+        <th scope="col">研修生</th>
+        <th scope="col">研修カテゴリー</th>        
+        <th scope="col">研修担当者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @trainings.each do |training| %>
+        <tr>
+          <% training.users.each do |user| %>
+            <% if user.id == training.trainer_id %>
+              <% @trainer_name = "#{user.last_name}#{user.first_name}" %>
+            <% else %>
+              <% @trainee_name = "#{user.last_name}#{user.first_name}" %>
+            <% end %>
+          <% end %>
+          <td><a href="#" class="">詳細</a></td>
+          <td><%= training.training_date %></td>
+          <td><%= @trainee_name %></td>
+          <td><%= training.training_category.name %></td>
+          <td><%= @trainer_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
