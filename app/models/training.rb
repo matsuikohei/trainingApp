@@ -3,7 +3,7 @@ class Training < ApplicationRecord
   has_many :users, through: :training_users
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category_training
+  belongs_to :training_category
   with_options presence: true do
     validates :training_date
     validates :training_category_id, numericality: { other_than: 1 }

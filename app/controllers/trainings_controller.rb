@@ -2,6 +2,10 @@ class TrainingsController < ApplicationController
   def top
   end
 
+  def index
+    @trainings = Training.includes(:users).order('created_at DESC')
+  end
+
   def new
     @training = Training.new
   end

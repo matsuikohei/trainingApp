@@ -1,4 +1,4 @@
-class CategoryTraining < ActiveHash::Base
+class TrainingCategory < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'category_training1' },

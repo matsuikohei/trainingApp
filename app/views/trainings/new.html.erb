@@ -23,7 +23,7 @@
 
     <div class="form-floating">
       <%= f.label :training_category_id %><br />
-      <%= f.collection_select(:training_category_id, CategoryTraining.all, :id, :name, {}, {class: "form-control", placeholder: ""}) %>
+      <%= f.collection_select(:training_category_id, TrainingCategory.all, :id, :name, {}, {class: "form-control", placeholder: ""}) %>
     </div>
 
     <div class="form-floating">
