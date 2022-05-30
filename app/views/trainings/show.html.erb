@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="table-responsive user-info">
+        <div class="">
+          <h2>研修内容情報</h2>
+          <%= "実施日：#{@training.training_date}" %><br>
+          <%= "研修生氏名：#{@trainee.last_name}#{@trainee.first_name}" %><br>
+          <%= "カテゴリー：#{@training.training_category.name}" %><br>
+          <%= "詳細：#{@training.content}" %><br>
+          <%= "担当者：#{@trainer.last_name}#{@trainer.first_name}" %><br>
+        </div>
+        <% if current_user.id == @trainer.id %>
+          <div class="training-btn">
+            <%= link_to "編集する", edit_training_path(@training), class:"training-edit-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </main>
+  </div>
+</div>
