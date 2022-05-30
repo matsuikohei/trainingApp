@@ -1,4 +1,6 @@
 class TrainingsController < ApplicationController
+  before_action :set_training, only: [:edit, :update]
+
   def top
   end
 
@@ -20,16 +22,23 @@ class TrainingsController < ApplicationController
   end
 
   def edit
-    @training = Training.find(params[:id])
   end
 
   def update
-
+    if @training.update(training_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def training_params
     params.require(:training).permit(:trainer_id, :training_date, :training_category_id, :content, user_ids: [])
+  end
+
+  def set_training
+    @training = Training.find(params[:id])
   end
 end
