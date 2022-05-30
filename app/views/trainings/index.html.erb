@@ -20,7 +20,7 @@
               <% @trainee_name = "#{user.last_name}#{user.first_name}" %>
             <% end %>
           <% end %>
-          <td><a href="#" class="">詳細</a></td>
+          <td><%= link_to "詳細", root_path %></td>
           <td><%= training.training_date %></td>
           <td><%= @trainee_name %></td>
           <td><%= training.training_category.name %></td>
