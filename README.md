@@ -1,24 +1,101 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| employee_number    | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
 
-* Ruby version
+## Association
 
-* System dependencies
+- has_many :training_comments
+- has_many :test_comments
+- has_many :training_users
+- has_many :trainings, through: :training_users
+- has_many :test_users
+- has_many :tests, through: :test_users
 
-* Configuration
+## trainingsテーブル
 
-* Database creation
+| Column               | Type    | Options     |
+| -------------------- | ------- | ----------- |
+| training_date        | date    | null: false |
+| training_category_id | integer | null: false |
+| content              | text    | null: false |
+| trainer_id           | integer | null: false |
 
-* Database initialization
+## Association
 
-* How to run the test suite
+- has_many :training_comments
+- has_many :training_users
+- has_many :users, through: :training_users
 
-* Services (job queues, cache servers, search engines, etc.)
+## training_usersテーブル
 
-* Deployment instructions
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| training | references | null: false, foreign_key: true |
 
-* ...
+## Association
+
+belongs_to :user
+belongs_to :training
+
+## training_commentsテーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| training | references | null: false, foreign_key: true |
+| content  | text       | null: false                    |
+
+## Association
+
+- belongs_to :user
+- belongs_to :training
+
+## testsテーブル
+
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| test_date        | date    | null: false |
+| test_category_id | integer | null: false |
+| content          | string  | null: false |
+
+- has_many :test_comments
+- has_many :test_users
+- has_many :users, through: :test_users
+
+## Association
+
+- has_many :test_comments
+
+## test_usersテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| test   | references | null: false, foreign_key: true |
+
+## Association
+
+belongs_to :user
+belongs_to :test
+
+## test_commentsテーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| test    | references | null: false, foreign_key: true |
+| content | text       | null: false                    |
+
+## Association
+
+- belongs_to :user
+- belongs_to :test

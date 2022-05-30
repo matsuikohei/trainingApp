@@ -71,3 +71,38 @@
   color: #6c757d;
   border-color: #6c757d;
 }
+
+/*******************************************************************************************************
+研修内容投稿ページ
+*******************************************************************************************************/
+.training-title{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+.form-training{
+  width: 70vw;
+
+}
+
+.form-training .form-floating{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-training .form-floating .form-control{
+  width: 100%;
+  padding: 5px;
+}
+
+.form-training .submit-btn{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.form-training .submit-btn input{
+  width: 20%;
+  padding: 5px;
+}
