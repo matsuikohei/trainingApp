@@ -17,10 +17,6 @@ class Training < ApplicationRecord
   end
 
   def training_date_cannot_be_in_the_future
-    if training_date > Date.today 
-      errors.add(:training_date, "can't be in the future")
-    end
+    errors.add(:training_date, "can't be in the future") if training_date > Date.today
   end
-
-
 end

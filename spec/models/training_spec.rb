@@ -20,24 +20,23 @@ RSpec.describe Training, type: :model do
       it '研修カテゴリーが空では登録できない' do
         @training.training_category_id = ''
         @training.valid?
-        expect(@training.errors.full_messages).to include("Training category is not a number")        
+        expect(@training.errors.full_messages).to include('Training category is not a number')
       end
       it '研修カテゴリーが「---」では登録できない' do
         @training.training_category_id = '1'
         @training.valid?
-        expect(@training.errors.full_messages).to include("Training category must be other than 1")        
+        expect(@training.errors.full_messages).to include('Training category must be other than 1')
       end
       it '研修内容が空では登録できない' do
         @training.content = ''
         @training.valid?
-        expect(@training.errors.full_messages).to include("Content can't be blank")                
+        expect(@training.errors.full_messages).to include("Content can't be blank")
       end
       it '研修実施者が空では登録できない' do
         @training.trainer_id = ''
         @training.valid?
-        expect(@training.errors.full_messages).to include("Trainer can't be blank")                
+        expect(@training.errors.full_messages).to include("Trainer can't be blank")
       end
     end
   end
-
 end
