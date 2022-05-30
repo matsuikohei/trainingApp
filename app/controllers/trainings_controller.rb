@@ -1,5 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:edit, :update]
+  before_action :move_to_index, only: :edit
 
   def top
   end
@@ -40,5 +41,12 @@ class TrainingsController < ApplicationController
 
   def set_training
     @training = Training.find(params[:id])
+  end
+
+  def move_to_index
+    training = Training.find(params[:id])
+    if current_user.id != training.trainer_id
+      redirect_to root_path
+    end 
   end
 end
