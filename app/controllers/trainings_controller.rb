@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
-  before_action :set_training, only: [:show, :edit, :update]
-  before_action :move_to_index, only: :edit
+  before_action :set_training, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def top
   end
@@ -41,6 +41,14 @@ class TrainingsController < ApplicationController
       redirect_to training_path(@training)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @training.destroy
+      redirect_to trainings_path
+    else
+      render :show
     end
   end
 
