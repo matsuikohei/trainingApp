@@ -1,5 +1,5 @@
 class TrainingsController < ApplicationController
-  before_action :set_training, only: [:edit, :update]
+  before_action :set_training, only: [:show, :edit, :update]
   before_action :move_to_index, only: :edit
 
   def top
@@ -22,12 +22,23 @@ class TrainingsController < ApplicationController
     end
   end
 
+  def show
+    users = @training.users
+    users.each do |user|
+      if user.id == @training.trainer_id
+        @trainer = user
+      else
+        @trainee = user
+      end
+    end
+  end
+
   def edit
   end
 
   def update
     if @training.update(training_params)
-      redirect_to root_path
+      redirect_to training_path(@training)
     else
       render :edit
     end
