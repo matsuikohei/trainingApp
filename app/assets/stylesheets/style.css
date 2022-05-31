@@ -127,13 +127,43 @@
 /*******************************************************************************************************
 研修内容詳細ページ
 *******************************************************************************************************/
-.training-edit-btn{
-  color: #ffffff;
-  text-decoration: none;
+.training-contents{
+  width: 40vw;
+}
+.training-content{
+  width: 100%;
+  word-break: break-all;
 }
 
 .training-btn{
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.training-edit-btn{
   background-color: gray;
   margin-left: 60px;
   padding: 10px;
   border-radius: 5px;
+  display: block;
+}
+
+.training-delete-btn{
+  background-color: red;
+  margin-top: 20px;
+  margin-left: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+}
+
+.training-return-btn{
+  width: 10vw;
+  text-align: center;
+  background-color: lightgray;
+  margin: 20px auto 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+}
