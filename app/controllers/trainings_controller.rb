@@ -23,6 +23,7 @@ class TrainingsController < ApplicationController
   end
 
   def show
+    @training_comment = TrainingComment.new
     users = @training.users
     users.each do |user|
       if user.id == @training.trainer_id
