@@ -1,7 +1,12 @@
 class TrainingCommentsController < ApplicationController
   def create
-    training_comment = TrainingComment.create(training_comment_params)
-    redirect_to "/trainings/#{training_comment.training_id}"
+    @training = Training.find(params[:training_id])
+    training_comment = TrainingComment.new(training_comment_params)
+    if training_comment.save
+      redirect_to "/trainings/#{training_comment.training_id}"
+    else
+      redirect_to "/trainings/#{@training.id}"
+    end
   end
 
   private
