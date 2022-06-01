@@ -24,6 +24,7 @@ class TrainingsController < ApplicationController
 
   def show
     @training_comment = TrainingComment.new
+    @training_comments = @training.training_comments.includes(:user)
     users = @training.users
     users.each do |user|
       if user.id == @training.trainer_id

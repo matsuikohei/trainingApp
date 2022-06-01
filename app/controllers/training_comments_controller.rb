@@ -5,6 +5,7 @@ class TrainingCommentsController < ApplicationController
     if training_comment.save
       redirect_to "/trainings/#{training_comment.training_id}"
     else
+      @training_comments = @training.training_comments.includes(:user)
       redirect_to "/trainings/#{@training.id}"
     end
   end
