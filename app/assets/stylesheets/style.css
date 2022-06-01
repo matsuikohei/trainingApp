@@ -195,7 +195,7 @@
 .training-comments-form input{
   width: 80%;
   height: 5vh;
-  margin: 15px auto 0 ;
+  margin: 15px auto 10px ;
   display: block;
   text-align: center;
   background-color: lightblue;
