@@ -1,6 +1,16 @@
+
 <div class="comment">
-  <%= l comment.created_at %>
-  <%= "#{comment.user.last_name}#{comment.user.first_name}" %>
-  ：
-  <%= comment.content %>
+  <div class="comment-delete">
+  <% if current_user.id == comment.user.id %>
+      <%= link_to image_tag("delete_icon.svg", alt: "icon", size: "15x15"), root_path %>
+  <% end %>
+  </div>
+  <div class="comment-info">
+    <%= l comment.created_at %>
+    <%= "#{comment.user.last_name}#{comment.user.first_name}" %>
+    ：
+  </div>
+  <div class="comment-text">
+    <%= comment.content %>
+  </div>
 </div>

@@ -3,11 +3,7 @@
   width: 100%;
   background-color: black;
 } 
-.container-fluid{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .navbar-brand{
   color: #ffffff;
   font-size: 20px;
