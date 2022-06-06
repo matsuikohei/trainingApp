@@ -14,6 +14,6 @@ class TestsController < ApplicationController
 
   private
   def test_params
-    params.require(:test).permit(:test_date, :test_category_id, :result)
+    params.require(:test).permit( :examiner_id, :test_date, :test_category_id, :result, :comment,  user_ids: [] )
   end
 end
