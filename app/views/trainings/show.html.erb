@@ -31,7 +31,10 @@
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
       </div>
-      <%= render partial: "comment", collection: @training_comments %>
+      <div class="comments">
+          ＜コメント一覧＞
+          <%= render partial: "comment", collection: @training_comments %>
+      </div>
       <div class="training-return-btn">
         <%= link_to "戻る", trainings_path, class:"training-btn" %>
       </div>

@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "trainings#top"
   resources :users, only: [:show, :edit, :update]
   resources :trainings do
-    resources :training_comments, only: [:create]
+    resources :training_comments, only: [:create, :destroy]
   end
 end

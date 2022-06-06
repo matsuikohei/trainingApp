@@ -1,7 +1,7 @@
 class Training < ApplicationRecord
   has_many :training_users, dependent: :destroy
   has_many :users, through: :training_users
-  has_many :training_comments
+  has_many :training_comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :training_category

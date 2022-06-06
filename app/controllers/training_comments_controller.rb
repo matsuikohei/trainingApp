@@ -10,6 +10,12 @@ class TrainingCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    training_comment = TrainingComment.find(params[:id])
+    training_comment.destroy
+    redirect_to "/trainings/#{training_comment.training_id}"
+  end
+
   private
 
   def training_comment_params
