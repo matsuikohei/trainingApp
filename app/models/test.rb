@@ -8,7 +8,7 @@ class Test < ApplicationRecord
   with_options presence: true do
     validates :test_date
     validates :test_category_id, numericality: { other_than: 1 }
-    validates :result
+    validates :result, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
     validates :examiner_id
   end
 
