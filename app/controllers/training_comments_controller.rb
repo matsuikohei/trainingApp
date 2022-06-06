@@ -11,6 +11,7 @@ class TrainingCommentsController < ApplicationController
   end
 
   private
+
   def training_comment_params
     params.require(:training_comment).permit(:content).merge(user_id: current_user.id, training_id: params[:training_id])
   end
