@@ -9,7 +9,9 @@ class User < ApplicationRecord
     validates :first_name, format: { with: /\A[a-zぁ-んァ-ヶ一-龥々ー]+\z/i }
   end
 
-  has_many :training_users
+  has_many :training_users, dependent: :destroy
   has_many :trainings, through: :training_users
   has_many :training_comments, dependent: :destroy
+  has_many :test_users
+  has_many :tests, through: :test_users
 end

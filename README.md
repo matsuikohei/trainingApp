@@ -65,15 +65,14 @@ belongs_to :training
 | ---------------- | ------- | ----------- |
 | test_date        | date    | null: false |
 | test_category_id | integer | null: false |
-| content          | string  | null: false |
-
-- has_many :test_comments
-- has_many :test_users
-- has_many :users, through: :test_users
+| result           | integer | null: false |
+| examiner_id      | integer | null: false |
 
 ## Association
 
 - has_many :test_comments
+- has_many :test_users
+- has_many :users, through: :test_users
 
 ## test_usersテーブル
 

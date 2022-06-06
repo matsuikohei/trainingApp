@@ -17,6 +17,11 @@ RSpec.describe Training, type: :model do
         @training.valid?
         expect(@training.errors.full_messages).to include("Training date can't be blank")
       end
+      it '研修実施日が今日以降では登録できない' do
+        @training.training_date = Faker::Date.forward(days: 14)
+        @training.valid?
+        expect(@training.errors.full_messages).to include("Training date can't be in the future")
+      end
       it '研修カテゴリーが空では登録できない' do
         @training.training_category_id = ''
         @training.valid?
