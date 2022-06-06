@@ -11,4 +11,14 @@ class Test < ApplicationRecord
     validates :result
     validates :examiner_id
   end
+
+  validate :test_date_cannot_be_in_the_future, if: :test_date_valid?
+
+  def test_date_valid?
+    test_date != nil
+  end
+
+  def test_date_cannot_be_in_the_future
+    errors.add(:test_date, "can't be in the future") if test_date > Date.today
+  end
 end
