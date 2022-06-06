@@ -2,15 +2,14 @@
 <div class="comment">
   <div class="comment-delete">
   <% if current_user.id == comment.user.id %>
-      <%= link_to image_tag("delete_icon.svg", alt: "icon", size: "15x15"), root_path %>
+      <%= link_to image_tag("delete_icon.svg", alt: "icon", size: "15x15"), "/trainings/#{comment.training.id}/training_comments/#{comment.id}", method: :delete %>
   <% end %>
   </div>
   <div class="comment-info">
     <%= l comment.created_at %>
     <%= "#{comment.user.last_name}#{comment.user.first_name}" %>
-    ：
   </div>
   <div class="comment-text">
-    <%= comment.content %>
+    ：<%= comment.content %>
   </div>
 </div>
