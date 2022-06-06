@@ -11,5 +11,5 @@ class User < ApplicationRecord
 
   has_many :training_users
   has_many :trainings, through: :training_users
-  has_many :training_comments
+  has_many :training_comments, dependent: :destroy
 end
