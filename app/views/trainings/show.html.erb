@@ -21,6 +21,17 @@
           </div>
         <% end %>
       </div>
+      <div class="training-comments">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@training, @training_comment], local: true, class:"training-comments-form") do |form| %>
+            <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+            <%= form.submit "送信" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+      <%= render partial: "comment", collection: @training_comments %>
       <div class="training-return-btn">
         <%= link_to "戻る", trainings_path, class:"training-btn" %>
       </div>
