@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="table-responsive user-info">
+        <div class="training-contents">
+          <h2>試験結果情報</h2>
+          <div class="training-content"><%= "実施日：#{@test.test_date}" %></div>
+          <div class="training-content"><%= "受験者氏名：#{@examinee.last_name}#{@examinee.first_name}" %></div>
+          <div class="training-content"><%= "カテゴリー：#{@test.test_category.name}" %></div>
+          <div class="training-content"><%= "点数：#{@test.result}" %></div>
+          <% if @test.comment != "" %>
+            <div class="training-content"><%= "所感：#{@test.comment}" %></div>
+          <% end %>
+          <div class="training-content"><%= "担当者：#{@examiner.last_name}#{@examiner.first_name}" %></div>
+        </div>
+        <% if current_user.id == @examiner.id %>
+          <div class="">
+            <div class="training-edit-btn">
+              <%= link_to "編集", "#", class:"training-btn" %>
+            </div>
+            <div class="training-delete-btn">
+              <%= link_to "削除", "#", class:"training-btn" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="training-return-btn">
+        <%= link_to "戻る", tests_path, class:"training-btn" %>
+      </div>
+    </main>
+  </div>
+</div>
