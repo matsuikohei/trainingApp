@@ -16,7 +16,7 @@
         <% if current_user.id == @examiner.id %>
           <div class="">
             <div class="training-edit-btn">
-              <%= link_to "編集", "#", class:"training-btn" %>
+              <%= link_to "編集", edit_test_path(@test), class:"training-btn" %>
             </div>
             <div class="training-delete-btn">
               <%= link_to "削除", "#", class:"training-btn" %>
