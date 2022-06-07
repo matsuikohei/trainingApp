@@ -1,4 +1,6 @@
 class TestsController < ApplicationController
+  before_action :set_test, only: [:edit, :update, :show]
+  before_action :move_to_index, only: [:edit]
 
   def index
     @tests = Test.includes(:users).order('created_at DESC')
@@ -18,7 +20,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    @test = Test.find(params[:id])
     users = @test.users
     users.each do |user|
       if user.id == @test.examiner_id
@@ -30,14 +31,28 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test = Test.find(params[:id])
   end
 
   def update
+    if @test.update(test_params)
+      redirect_to test_path(@test)
+    else
+      render :edit
+    end
   end
 
   private
+
+  def set_test
+    @test = Test.find(params[:id])
+  end
+
   def test_params
     params.require(:test).permit( :examiner_id, :test_date, :test_category_id, :result, :comment,  user_ids: [] )
+  end
+
+  def move_to_index
+    test = Test.find(params[:id])
+    redirect_to root_path if current_user.id != test.examiner_id
   end
 end
