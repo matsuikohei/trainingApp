@@ -13,5 +13,4 @@ class TestCommentsController < ApplicationController
   def test_comment_params
     params.require(:test_comment).permit(:content).merge(user_id: current_user.id, test_id: params[:test_id])
   end
-
 end
