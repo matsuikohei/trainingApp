@@ -10,7 +10,7 @@ RSpec.describe Test, type: :model do
         expect(@test).to be_valid
       end
       it 'コメントが空でも登録できる' do
-        @test.comment = ""
+        @test.comment = ''
         expect(@test).to be_valid
       end
       it '試験の点数が0点でも登録できる' do
@@ -57,17 +57,17 @@ RSpec.describe Test, type: :model do
       it '試験の点数が英字では登録できない' do
         @test.result = 'abc'
         @test.valid?
-        expect(@test.errors.full_messages).to include("Result is not a number")
+        expect(@test.errors.full_messages).to include('Result is not a number')
       end
       it '試験の点数が-1点では登録できない' do
         @test.result = -1
         @test.valid?
-        expect(@test.errors.full_messages).to include("Result must be greater than or equal to 0")
+        expect(@test.errors.full_messages).to include('Result must be greater than or equal to 0')
       end
       it '試験の点数が101点では登録できない' do
         @test.result = 101
         @test.valid?
-        expect(@test.errors.full_messages).to include("Result must be less than or equal to 100")
+        expect(@test.errors.full_messages).to include('Result must be less than or equal to 100')
       end
     end
   end

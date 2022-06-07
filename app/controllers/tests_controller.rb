@@ -48,7 +48,7 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit( :examiner_id, :test_date, :test_category_id, :result, :comment,  user_ids: [] )
+    params.require(:test).permit(:examiner_id, :test_date, :test_category_id, :result, :comment, user_ids: [])
   end
 
   def move_to_index
