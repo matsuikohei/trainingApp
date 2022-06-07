@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:edit, :update, :show]
-  before_action :move_to_index, only: [:edit]
+  before_action :set_test, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @tests = Test.includes(:users).order('created_at DESC')
@@ -38,6 +38,14 @@ class TestsController < ApplicationController
       redirect_to test_path(@test)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @test.destroy
+      redirect_to tests_path
+    else
+      render :show
     end
   end
 
