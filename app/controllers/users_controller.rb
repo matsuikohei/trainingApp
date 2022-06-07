@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update]
 
   def show
+    @trainings = @user.trainings.where.not(trainer_id: @user.id).order("training_date DESC")
   end
 
   def edit
