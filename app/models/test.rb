@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  has_many :test_users
+  has_many :test_users, dependent: :destroy
   has_many :users, through: :test_users
 
   extend ActiveHash::Associations::ActiveRecordExtensions

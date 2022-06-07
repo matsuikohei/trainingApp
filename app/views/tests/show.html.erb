@@ -19,7 +19,7 @@
               <%= link_to "編集", edit_test_path(@test), class:"training-btn" %>
             </div>
             <div class="training-delete-btn">
-              <%= link_to "削除", "#", class:"training-btn" %>
+              <%= link_to "削除", test_path(@test), method: :delete, class:"training-btn" %>
             </div>
           </div>
         <% end %>
