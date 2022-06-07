@@ -1,6 +1,7 @@
 class Test < ApplicationRecord
   has_many :test_users, dependent: :destroy
   has_many :users, through: :test_users
+  has_many :test_comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :test_category

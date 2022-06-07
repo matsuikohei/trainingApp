@@ -20,6 +20,8 @@ class TestsController < ApplicationController
   end
 
   def show
+    @test_comment = TestComment.new
+    @test_comments = @test.test_comments.includes(:user)
     users = @test.users
     users.each do |user|
       if user.id == @test.examiner_id
