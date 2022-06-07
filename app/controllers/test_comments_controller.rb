@@ -9,6 +9,12 @@ class TestCommentsController < ApplicationController
       redirect_to "/tests/#{@test.id}"
     end
   end
+   
+  def destroy
+    test_comment = TestComment.find(params[:id])
+    test_comment.destroy
+    redirect_to "/tests/#{test_comment.test_id}"
+  end  
 
   def test_comment_params
     params.require(:test_comment).permit(:content).merge(user_id: current_user.id, test_id: params[:test_id])
