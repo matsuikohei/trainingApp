@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :trainings do
     resources :training_comments, only: [:create, :destroy]
   end
-  resources :tests
+  resources :tests do
+    resources :test_comments, only: [:create]
+  end
 end
