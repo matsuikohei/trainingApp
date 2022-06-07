@@ -67,6 +67,7 @@ belongs_to :training
 | test_category_id | integer | null: false |
 | result           | integer | null: false |
 | examiner_id      | integer | null: false |
+| comment          | text    |             |
 
 ## Association
 
