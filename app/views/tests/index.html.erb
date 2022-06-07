@@ -21,7 +21,7 @@
               <% @examinee_name = "#{user.last_name}#{user.first_name}" %>
             <% end %>
           <% end %>
-          <td><%= link_to "詳細", "#", class: "table-link-to-show" %></td>
+          <td><%= link_to "詳細", test_path(test.id), class: "table-link-to-show" %></td>
           <td><%= test.test_date %></td>
           <td><%= @examinee_name %></td>
           <td><%= test.test_category.name %></td>

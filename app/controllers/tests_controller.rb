@@ -17,6 +17,19 @@ class TestsController < ApplicationController
     end
   end
 
+  def show
+    @test = Test.find(params[:id])
+    users = @test.users
+    users.each do |user|
+      if user.id == @test.examiner_id
+        @examiner = user
+      else
+        @examinee = user
+      end
+    end
+
+  end
+
   private
   def test_params
     params.require(:test).permit( :examiner_id, :test_date, :test_category_id, :result, :comment,  user_ids: [] )
