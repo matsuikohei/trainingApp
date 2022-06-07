@@ -1,0 +1,47 @@
+<div class="training-title">
+研修内容編集ページ
+</div>
+<div class="form-training">
+  <%= form_with model: @test, local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+
+    <div class="form-floating">
+      <label for="training_user">試験対象者</label>
+      <select name="test[user_ids][]" class="form-control" id="training_user">
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <option value=<%= user.id %>><%= "#{user.last_name}#{user.first_name}" %></option>
+        <% end %>
+      </select>
+      <input name="test[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      <input name="test[examiner_id]" type="hidden" value=<%= current_user.id %>>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :test_date %><br />
+      <%= f.date_field :test_date, class: "form-control" %>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :test_category_id %><br />
+      <%= f.collection_select(:test_category_id, TestCategory.all, :id, :name, {}, {class: "form-control", placeholder: ""}) %>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :result %><br />
+      <%= f.text_field :result, class: "form-control form-content" %>
+    </div>
+
+    <div class="form-floating">
+      <%= f.label :comment %><br />
+      <%= f.text_area :comment, class: "form-control form-content", rows: "10" %>
+    </div>
+
+    <div class="form-floating submit-btn">
+      <%= f.submit "編集する" %>
+    </div>
+
+  <% end %>
+</div>
+<div class="training-return-btn">
+  <%= link_to "戻る",  test_path(@test), class:"training-btn" %>
+</div>

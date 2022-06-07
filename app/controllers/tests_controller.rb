@@ -27,7 +27,13 @@ class TestsController < ApplicationController
         @examinee = user
       end
     end
+  end
 
+  def edit
+    @test = Test.find(params[:id])
+  end
+
+  def update
   end
 
   private
