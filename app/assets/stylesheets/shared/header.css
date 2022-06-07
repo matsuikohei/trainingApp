@@ -3,12 +3,26 @@
   width: 100%;
   background-color: black;
 } 
-
+.navbar-collapse{
+  display: flex;
+}
 .navbar-brand{
   color: #ffffff;
   font-size: 20px;
   padding: 15px;
   text-decoration: none;
+}
+.navbar-nav{
+  display: flex;
+}
+.navbar-nav .nav-link{
+  text-decoration: none;
+  color: #ffffff;
+}
+.navbar-nav li{
+  color: #ffffff;
+  padding-left: 15px;
+  margin: auto 0;
 }
 
 .d-flex{
