@@ -1,5 +1,5 @@
 <div class="table-responsive-training-index">
-  <div class="trainings-title">研修内容一覧</div>
+  <div class="trainings-title">研修内容投稿一覧</div>
   <table class="table table-striped table-sm">
     <thead>
       <tr>
@@ -20,7 +20,7 @@
               <% @trainee_name = "#{user.last_name}#{user.first_name}" %>
             <% end %>
           <% end %>
-          <td><%= link_to "詳細", training_path(training) %></td>
+          <td><%= link_to "詳細", training_path(training), class: "table-link-to-show" %></td>
           <td><%= training.training_date %></td>
           <td><%= @trainee_name %></td>
           <td><%= training.training_category.name %></td>

@@ -1,4 +1,9 @@
 class TestsController < ApplicationController
+
+  def index
+    @tests = Test.includes(:users).order('created_at DESC')
+  end
+
   def new
     @test = Test.new
   end

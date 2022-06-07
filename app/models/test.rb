@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_users
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :training_category
+  belongs_to :test_category
 
   with_options presence: true do
     validates :test_date
