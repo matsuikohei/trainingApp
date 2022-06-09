@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update]
 
   def index
-    @users = User.all.order("employee_number ASC")
+    @users = User.all.order('employee_number ASC')
   end
-  
+
   def show
-    @trainings = @user.trainings.where.not(trainer_id: @user.id).order("training_date DESC")
-    @tests = @user.tests.where.not(examiner_id: @user.id).order("test_date DESC")
+    @trainings = @user.trainings.where.not(trainer_id: @user.id).order('training_date DESC')
+    @tests = @user.tests.where.not(examiner_id: @user.id).order('test_date DESC')
   end
 
   def edit
