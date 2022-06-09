@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update]
 
   def index
+    @users = User.all.order("employee_number ASC")
   end
   
   def show
