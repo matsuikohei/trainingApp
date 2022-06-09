@@ -19,14 +19,15 @@
               <% @examiner_name = "#{user.last_name}#{user.first_name}" %>
             <% else %>
               <% @examinee_name = "#{user.last_name}#{user.first_name}" %>
+              <% @examinee_id = user.id %>
             <% end %>
           <% end %>
           <td><%= link_to "詳細", test_path(test.id), class: "table-link-to-show" %></td>
           <td><%= test.test_date %></td>
-          <td><%= @examinee_name %></td>
+          <td><%= link_to @examinee_name, user_path(@examinee_id), class: "table-link-to-show" %></td>
           <td><%= test.test_category.name %></td>
           <td><%= "#{test.result}点" %></td>
-          <td><%= @examiner_name %></td>
+          <td><%= link_to @examiner_name, user_path(test.examiner_id), class: "table-link-to-show" %></td>
         </tr>
       <% end %>
     </tbody>

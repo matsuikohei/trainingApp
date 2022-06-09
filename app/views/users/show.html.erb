@@ -35,7 +35,7 @@
                 <% end %>
                 <tr>
                   <td><%= training.training_date %></td>
-                  <td><%= @trainer_name %></td>
+                  <td><%= link_to @trainer_name, user_path(training.trainer_id), class: "table-link-to-show" %></td>
                   <td><%= training.training_category.name %></td>                  
                 </tr>
               <% end %>
@@ -64,7 +64,7 @@
                 <% end %>
                 <tr>
                   <td><%= test.test_date %></td>
-                  <td><%= @examiner_name %></td>
+                  <td><%= link_to @examiner_name, user_path(test.examiner_id), class: "table-link-to-show" %></td>
                   <td><%= test.test_category.name %></td>
                   <td><%= test.result %></td>
                 </tr>

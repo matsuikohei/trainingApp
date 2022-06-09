@@ -18,13 +18,14 @@
               <% @trainer_name = "#{user.last_name}#{user.first_name}" %>
             <% else %>
               <% @trainee_name = "#{user.last_name}#{user.first_name}" %>
+              <% @trainee_id = user.id %>
             <% end %>
           <% end %>
           <td><%= link_to "詳細", training_path(training), class: "table-link-to-show" %></td>
           <td><%= training.training_date %></td>
-          <td><%= @trainee_name %></td>
+          <td><%= link_to @trainee_name, user_path(@trainee_id), class: "table-link-to-show" %></td>
           <td><%= training.training_category.name %></td>
-          <td><%= @trainer_name %></td>
+          <td><%= link_to @trainer_name, user_path(training.trainer_id), class: "table-link-to-show" %></td>
         </tr>
       <% end %>
     </tbody>
