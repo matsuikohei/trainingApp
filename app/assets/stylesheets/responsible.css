@@ -140,4 +140,23 @@ main .training-return-btn{
   width: 50px;
   font-size: 10px;
 }
+/**************************************************************************************************************
+研修内容詳細画面
+**************************************************************************************************************/
+body .training-title{
+  font-size: 15px
+}
+
+body .form-training{
+  width: 100vw;
+  padding: 0 5px;
+}
+body .form-training .form-floating{
+  width: 90%;
+  margin: 0 0 0 10px;
+  font-size: 10px;
+}
+body .form-training .submit-btn input{
+  font-size: 10px;
+}
 }
