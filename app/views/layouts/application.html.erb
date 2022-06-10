@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">
   </head>
   <% if user_signed_in? %>
     <%= render "trainings/header_second" %>
