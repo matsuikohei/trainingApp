@@ -1,0 +1,62 @@
+/* タブレット表示時 */
+@media (max-width: 1024px){
+
+}
+
+
+/* スマホ表示時 */
+@media (max-width: 599px){
+  .navbar .container-fluid{
+    height: 100%;
+  }
+  .collapse .navbar-brand{
+    font-size: 13px;
+  }
+  .nav-link{
+    font-size: 5px;
+    overflow-wrap: break-word;
+  }
+  .navbar .container-fluid .d-flex{
+    width: 30%;
+    justify-content: space-around;
+    margin: auto
+  }
+  .navbar .container-fluid .d-flex .nav-item{
+    width: 40%;
+  }
+  .navbar .container-fluid .d-flex .nav-item .nav-link{
+    width: 90%;
+    height: 100%;
+    padding: 0;
+  }
+  #top-page-hero{
+    height: 25%;
+    padding: 10px auto;
+  }
+
+  .top-main .col-lg-6{
+    height: 10%;
+  }
+  .top-main .album .container{
+    padding: 0;
+  }
+
+  .container .row{
+    flex-direction: column;
+  }
+
+  .top-main .album .container .row .col{
+    width: 80vw;
+    height: 40%;
+    margin: 5px auto;
+  }
+  .album .container .row .col .card .card-body{
+    padding-top: 0;
+  }
+  .row .col .card .card-body .d-flex{
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 60%;
+  }
+}
