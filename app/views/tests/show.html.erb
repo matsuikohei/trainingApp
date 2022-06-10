@@ -3,7 +3,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="table-responsive user-info">
         <div class="training-contents">
-          <h2>試験結果情報</h2>
+          <h2 class="training-contents-header">試験結果情報</h2>
           <div class="training-content"><%= "実施日：#{@test.test_date}" %></div>
           <div class="training-content"><%= "受験者氏名：#{@examinee.last_name}#{@examinee.first_name}" %></div>
           <div class="training-content"><%= "カテゴリー：#{@test.test_category.name}" %></div>
