@@ -153,11 +153,14 @@ body .form-training{
 }
 body .form-training .form-floating{
   width: 90%;
-  margin: 0 0 0 10px;
+  margin: 0 auto;
   font-size: 10px;
 }
 body .form-training .submit-btn input{
   font-size: 10px;
+  border-style: none;
+  border-radius: 5px;
+  height: 30px;
 }
 /**************************************************************************************************************
 試験結果詳細画面
@@ -165,4 +168,12 @@ body .form-training .submit-btn input{
 #test_comment_content{
   font-size: 10px;
 }
+/**************************************************************************************************************
+試験結果編集画面
+**************************************************************************************************************/
+body .training-return-btn{
+  font-size: 10px;
+  width: 50px;
+}
+
 }
