@@ -3,7 +3,10 @@ class TestCommentsController < ApplicationController
     @test = Test.find(params[:test_id])
     test_comment = TestComment.new(test_comment_params)
     if test_comment.save
-      redirect_to "/tests/#{test_comment.test_id}"
+      comment = TestComment.find(test_comment.id)
+      comment_created_at = l comment.created_at
+      render json: { post: comment, comment_created_at: comment_created_at, test: @test, current_user: current_user }
+      # redirect_to "/tests/#{test_comment.test_id}"
     else
       @test_comments = @test.test_comments.includes(:user)
       redirect_to "/tests/#{@test.id}"

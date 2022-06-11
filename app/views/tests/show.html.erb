@@ -29,6 +29,7 @@
           <%= form_with(model: [@test, @test_comment], local: true, class:"training-comments-form") do |form| %>
             <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
             <%= form.submit "送信", class: "comment-submit-btn" %>
+            <input type="hidden" id="test-id" value="<%= @test.id %>">
           <% end %>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
