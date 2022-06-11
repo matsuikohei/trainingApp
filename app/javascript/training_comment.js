@@ -16,6 +16,7 @@ function post (){
       const commentCreatedAt = XHR.response.comment_created_at;
       const training = XHR.response.training;
       const current_user = XHR.response.current_user;
+      const user = XHR.response.user;
       let deleteImage = "";
       if ( current_user.id == item.user_id ) {
         deleteImage = `<a rel=\"nofollow\" data-method=\"delete\" href=\"/trainings/${training.id}/training_comments/${item.id}\"><img alt=\"icon\" src=\"/assets/delete_icon-01bc7ef48b9443861f7869730588aa754f5cc83396e3bc4bc10fb0a5d4af2afd.svg\" width=\"15\" height=\"15\"></a>`;
@@ -26,7 +27,7 @@ function post (){
             ${deleteImage}
           </div>
           <div class="comment-info">
-            ${commentCreatedAt}
+            ${commentCreatedAt} ${user.last_name}${user.first_name}
           </div>
           <div class="comment-text">
             ：${item.content}

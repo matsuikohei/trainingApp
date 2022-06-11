@@ -5,7 +5,8 @@ class TrainingCommentsController < ApplicationController
     if training_comment.save
       comment = TrainingComment.find(training_comment.id)
       comment_created_at = l comment.created_at
-      render json: { post: comment, comment_created_at: comment_created_at, training: @training, current_user: current_user }
+      user = User.find(comment.user_id)
+      render json: { post: comment, comment_created_at: comment_created_at, training: @training, current_user: current_user, user: user }
       # redirect_to "/trainings/#{training_comment.training_id}"
     else
       @training_comments = @training.training_comments.includes(:user)
