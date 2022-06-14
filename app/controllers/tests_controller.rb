@@ -13,7 +13,7 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     if @test.save
-      redirect_to root_path
+      redirect_to tests_path
     else
       render :new
     end
