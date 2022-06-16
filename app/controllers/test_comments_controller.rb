@@ -1,4 +1,5 @@
 class TestCommentsController < ApplicationController
+
   def create
     @test = Test.find(params[:test_id])
     test_comment = TestComment.new(test_comment_params)
@@ -19,7 +20,7 @@ class TestCommentsController < ApplicationController
     test_comment.destroy
     redirect_to "/tests/#{test_comment.test_id}"
   end
-
+  private
   def test_comment_params
     params.require(:test_comment).permit(:content).merge(user_id: current_user.id, test_id: params[:test_id])
   end
