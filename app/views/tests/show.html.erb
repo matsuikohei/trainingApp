@@ -9,7 +9,7 @@
           <div class="training-content"><%= "カテゴリー：#{@test.test_category.name}" %></div>
           <div class="training-content"><%= "点数：#{@test.result}" %></div>
           <% if @test.comment != "" %>
-            <div class="training-content"><%= "所感：#{@test.comment}" %></div>
+            <div class="training-content"><%= "コメント：#{@test.comment}" %></div>
           <% end %>
           <div class="training-content"><%= "担当者：#{@examiner.last_name}#{@examiner.first_name}" %></div>
         </div>
