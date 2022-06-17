@@ -7,7 +7,8 @@ class TestCommentsController < ApplicationController
       comment = TestComment.find(test_comment.id)
       comment_created_at = l comment.created_at
       user = User.find(comment.user_id)
-      render json: { post: comment, comment_created_at: comment_created_at, test: @test, current_user: current_user, user: user }
+      TestCommentChannel.broadcast_to @test, { post: comment, comment_created_at: comment_created_at, test: @test, current_user: current_user, user: user }
+      # render json: { post: comment, comment_created_at: comment_created_at, test: @test, current_user: current_user, user: user }
       # redirect_to "/tests/#{test_comment.test_id}"
     else
       @test_comments = @test.test_comments.includes(:user)

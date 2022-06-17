@@ -6,7 +6,8 @@ class TrainingCommentsController < ApplicationController
       comment = TrainingComment.find(training_comment.id)
       comment_created_at = l comment.created_at
       user = User.find(comment.user_id)
-      render json: { post: comment, comment_created_at: comment_created_at, training: @training, current_user: current_user, user: user }
+      TrainingCommentChannel.broadcast_to @training, { post: comment, comment_created_at: comment_created_at, training: @training, current_user: current_user, user: user }
+      # render json: { post: comment, comment_created_at: comment_created_at, training: @training, current_user: current_user, user: user }
       # redirect_to "/trainings/#{training_comment.training_id}"
     else
       @training_comments = @training.training_comments.includes(:user)
