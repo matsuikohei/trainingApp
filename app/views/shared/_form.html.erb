@@ -1,0 +1,5 @@
+<%= form_with(model: [type, comment], local: true, class:"training-comments-form") do |form| %>
+  <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+  <%= form.submit "送信", class: "comment-submit-btn" %>
+  <input type="hidden" id="training-id" value="<%= type.id %>">
+<% end %>
