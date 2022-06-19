@@ -170,13 +170,13 @@ TrainingApp
 
 研修内容詳細ページ（試験結果詳細ページ）においてコメントを投稿することができる。コメントをフォームに入力し、「送信」ボタンを押すと＜コメント一覧＞の下に投稿したコメントが表示される。
 
-[![Image from Gyazo](https://i.gyazo.com/07701e8c057a1c1147968ea416f6dc47.gif)](https://gyazo.com/07701e8c057a1c1147968ea416f6dc47)
+[![Image from Gyazo](https://i.gyazo.com/61dd6900f566b31efca9a90fda94472f.gif)](https://gyazo.com/61dd6900f566b31efca9a90fda94472f)
 
 ### **<u>コメント削除機能</u>**
 
 自身が投稿したコメントを削除することができる。自身が投稿したコメントのみ左側に画像が表示され、画像を押すとコメントが削除される。
 
-[![Image from Gyazo](https://i.gyazo.com/8d34eab805f9c4499355194b3d3621c6.gif)](https://gyazo.com/8d34eab805f9c4499355194b3d3621c6)
+[![Image from Gyazo](https://i.gyazo.com/c81c6f97c269cdbf6981ac6da769e6da.gif)](https://gyazo.com/c81c6f97c269cdbf6981ac6da769e6da)
 
 # データベース設計
 ![](trainingAppER.drawio.png)
