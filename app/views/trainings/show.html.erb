@@ -24,12 +24,12 @@
       <div class="training-comments">
           <%= render partial: "shared/form", locals: {type: @training, comment: @training_comment} %>
       </div>
-      <% if @training_comments.length != 0 %>
-        <div class="comments" id="comment" >
+      <div class="comments" id="comment" >
+        <% if @training_comments.length != 0 %>
           ＜コメント一覧＞
           <%= render partial: "comment", collection: @training_comments %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
       <div class="training-return-btn">
         <%= link_to "戻る", trainings_path, class:"training-btn" %>
       </div>

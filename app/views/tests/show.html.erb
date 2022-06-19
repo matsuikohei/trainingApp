@@ -27,13 +27,13 @@
       <div class="training-comments">
         <% if user_signed_in? %>
           <%= render partial: "shared/form", locals: {type: @test, comment: @test_comment} %>
-        <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
       </div>
       <div class="comments">
+        <% if @test_comments.length != 0 %>
           ＜コメント一覧＞
           <%= render partial: "comment", collection: @test_comments %>
+        <% end %>
       </div>
       <div class="training-return-btn">
         <%= link_to "戻る", tests_path, class:"training-btn" %>
