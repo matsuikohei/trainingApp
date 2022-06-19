@@ -22,19 +22,13 @@
         <% end %>
       </div>
       <div class="training-comments">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@training, @training_comment], local: true, class:"training-comments-form") do |form| %>
-            <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
-            <%= form.submit "送信", class: "comment-submit-btn" %>
-            <input type="hidden" id="training-id" value="<%= @training.id %>">
-          <% end %>
-        <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-        <% end %>
+          <%= render partial: "shared/form", locals: {type: @training, comment: @training_comment} %>
       </div>
-      <div class="comments">
+      <div class="comments" id="comment" >
+        <% if @training_comments.length != 0 %>
           ＜コメント一覧＞
           <%= render partial: "comment", collection: @training_comments %>
+        <% end %>
       </div>
       <div class="training-return-btn">
         <%= link_to "戻る", trainings_path, class:"training-btn" %>
